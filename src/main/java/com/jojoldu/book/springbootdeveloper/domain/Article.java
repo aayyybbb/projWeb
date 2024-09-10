@@ -20,6 +20,9 @@ public class Article {
     @Column(name = "id", updatable = false)
     private Long id;
 
+    @Column(name = "author", unique = false)
+    private String author;
+
     @Column(name = "title", nullable = false)
     private String title;
 
@@ -35,8 +38,9 @@ public class Article {
     private LocalDateTime updatedAt;
 
     @Builder
-    public Article(String title, String content) {
+    public Article(String title, String content, String author) {
         this.title = title;
+        this.author = author;
         this.content = content;
     }
 

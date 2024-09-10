@@ -10,6 +10,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RequiredArgsConstructor
 @Controller
@@ -18,7 +19,7 @@ public class UserApiController {
     private final UserService userService;
 
     @PostMapping("/user")
-    public String singup(AddUserRequest request){
+    public String singup(@RequestBody AddUserRequest request){
         userService.save(request);
         return "redirect:/login";
     }

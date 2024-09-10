@@ -12,9 +12,17 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public Long save(AddUserRequest request) {
-        return userRepository.save(User.builder().email(request.getEmail()).password((bCryptPasswordEncoder.encode(request.getPassword()))).build()).getId();
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        return userRepository.save(User.builder().email(request.getEmail()).password((encoder.encode(request.getPassword()))).build()).getId();
+    }
+
+    public User findById(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("User not found"));
+    }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("User not found"));
     }
 }
