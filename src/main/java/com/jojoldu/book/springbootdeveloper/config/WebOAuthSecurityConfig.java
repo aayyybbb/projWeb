@@ -53,7 +53,7 @@ public class WebOAuthSecurityConfig {
 
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests
-                        .requestMatchers("/api/token", "/user").permitAll()
+                        .requestMatchers("/api/token", "/user","/vi/email/**").permitAll()
                         .requestMatchers("/api/**").authenticated()
                         .anyRequest().permitAll()
         );

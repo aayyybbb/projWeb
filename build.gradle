@@ -40,6 +40,11 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt:0.9.1'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'com.sun.mail:jakarta.mail:2.0.1'
+    implementation 'jakarta.mail:jakarta.mail-api:2.0.1'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'ognl:ognl:3.3.3'
 }
 
 tasks.named('test') {

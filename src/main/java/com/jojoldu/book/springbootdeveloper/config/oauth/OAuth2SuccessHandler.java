@@ -4,7 +4,6 @@ import com.jojoldu.book.springbootdeveloper.config.jwt.TokenProvider;
 import com.jojoldu.book.springbootdeveloper.domain.RefreshToken;
 import com.jojoldu.book.springbootdeveloper.domain.User;
 import com.jojoldu.book.springbootdeveloper.repository.RefreshTokenRepository;
-import com.jojoldu.book.springbootdeveloper.repository.UserRepository;
 import com.jojoldu.book.springbootdeveloper.service.UserService;
 import com.jojoldu.book.springbootdeveloper.util.CookieUtil;
 import jakarta.servlet.http.HttpServletRequest;
